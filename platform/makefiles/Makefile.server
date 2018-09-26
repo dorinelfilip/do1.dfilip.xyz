@@ -1,0 +1,24 @@
+THIS_MAKEFILE_PATH:=$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
+include $(THIS_DIR)/common.mak
+include $(ROOT)/dirs
+
+server_deploy: create_networks create_secrets deploy_stack
+
+deploy_images: | container_build container_push
+
+deploy_stack: | create_networks create_secrets
+
+create_networks create_secrets deploy_stack:
+	@for folder in $(STACK_FOLDERS); do \
+		$(MAKE) -C $$folder -f $(THIS_DIR)/Makefile.stack $@ ; \
+	done
+
+container_build container_push: $(DOCKER_FOLDERS)
+	@for i in $< ; do \
+		if [ -f $$i/Makefile ] ; then \
+			$(MAKE) -C $$i $@ ; \
+		else  \
+			$(MAKE) -C $$i -f $(THIS_DIR)/Makefile.docker $@ ; \
+		fi ; \
+	done
