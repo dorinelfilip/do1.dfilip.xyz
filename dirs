@@ -1,6 +1,7 @@
 STACK_FOLDERS = \
   platform/proxy \
-  projects/sprcweb
+  projects/sprcweb \
+  projects/wiki
 
 DOCKER_FOLDERS = \
   projects/sprcweb
