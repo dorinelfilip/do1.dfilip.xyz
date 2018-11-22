@@ -16,6 +16,11 @@ def rand_generator(size=6, chars=string.ascii_uppercase + string.digits):
 def hello():
     return "Hello World!"
 
+@app.route("/cache/<cid>")
+def cache(cid):
+    import datetime
+    return 'ID={}\n Time={}'.format(cid, str(datetime.datetime.now()))
+
 @app.route("/lab01")
 def lab01():
     return render_template('lab01.html')
