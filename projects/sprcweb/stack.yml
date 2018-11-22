@@ -6,8 +6,8 @@ services:
     environment:
       VIRTUAL_HOST: 'sprc.dfilip.xyz'
       VIRTUAL_PORT: 80
-      LETSENCRYPT_HOST: 'sprc.dfilip.xyz'
-      LETSENCRYPT_EMAIL: 'contact@dfilip.xyz'
+#      LETSENCRYPT_HOST: 'sprc.dfilip.xyz'
+#      LETSENCRYPT_EMAIL: 'contact@dfilip.xyz'
     networks:
      - proxy_net
 
