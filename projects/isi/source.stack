@@ -1,0 +1,4 @@
+STACK_FILE=stack.yml
+STACK_NAME=isi
+CREATE_SECRETS=grafana_password
+DEPLOY_ENVS=production

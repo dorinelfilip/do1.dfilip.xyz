@@ -1,3 +1,0 @@
-STACK_FILE=stack.yml
-STACK_NAME=sprcweb
-DEPLOY_ENVS=platform production

@@ -1,7 +1,6 @@
 STACK_FOLDERS = \
   platform/proxy \
-  projects/sprcweb \
-  projects/wiki
+  projects/isi
 
 DOCKER_FOLDERS = \
-  projects/sprcweb
+  projects/isi/software/lora2mqtt
